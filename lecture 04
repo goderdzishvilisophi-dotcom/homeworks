@@ -1,0 +1,47 @@
+#1
+
+# age = int(input('Enter your age: '))
+# if age < 12:
+#     print('You are a child')
+# elif 13 <= age <= 19:
+#     print('You are a teenager')
+# elif 20 <= age < 64:
+#     print('You are an adult')
+# else:
+#     print('You are an elder')
+
+########################################################################################################
+
+#2
+
+# score = int(input("Enter a score: "))
+# attendance = int(input("Enter an attendance: "))
+# if score > 60 and attendance > 75:
+#     print('Chaabara')
+# else:
+#     print('Ver chaabara')
+
+########################################################################################################
+
+#3
+
+# student = input("Are you a student (yes/no)? ") == "yes"
+# member = input("Are you a member (yes/no)? ") == "yes"
+#
+# if student and member:
+#     print('You have a big discount')
+# elif student or member:
+#     print('You have a discount')
+# else:
+#     print('You do not have a discount')
+
+########################################################################################################
+
+#4
+
+# username = input("Enter your username: ")
+# length_of_username = len(username)
+# if 3 < length_of_username < 20 and username.isalnum():
+#     print('Username is correct')
+# else :
+#     print('Username is incorrect')
