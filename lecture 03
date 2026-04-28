@@ -1,0 +1,27 @@
+#1
+
+# name = input('Enter your name: ')
+# surname = input('Enter your surname: ')
+# first_letterofName = name[0]
+# first_letterofSurname = surname[0]
+# first_letterofName = first_letterofName.upper()
+# first_letterofSurname = first_letterofSurname.upper()
+#
+# print('Your initials are: ', first_letterofName,'.', first_letterofSurname)
+
+#########################################################################################################
+
+#2
+
+# word = input("Enter a word: ")
+# reversed_word = word[::-1]
+# print(reversed_word)
+
+
+#3
+
+# sentence = input('Enter a sentence: ')
+# word_one = input('Enter a word: ')
+# word_two = input('Enter another word: ')
+# new_sentence = sentence.replace(word_one, word_two)
+# print(new_sentence)
