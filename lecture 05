@@ -1,0 +1,67 @@
+ #1
+#
+# n = int(input("Enter a number: "))
+# while (n > 0):
+#     print(n)
+#     n-=1
+# print()
+
+##################################################################################################
+
+#2
+# number = ('')
+# sum = 0
+#
+# while number != 0:
+#     number = int(input("Enter a number: "))
+#     if (number > 0):
+#         sum = sum + number
+#
+# print(sum)
+
+
+###################################################################################################
+
+ #3
+# number = ''
+# while number != 7:
+#     number = int(input('Enter a number: '))
+#     if number > 7:
+#         print("Too high")
+#     elif number < 7:
+#         print("Too low")
+#     else:
+#         print("Correct!")
+#         break
+#print()
+
+###################################################################################################
+
+#4
+# str = (str(input("Enter a string: ")))
+
+# for ch in str:
+#     if ch in "aeiouAEIOU":
+#         continue
+#     print(ch, end="")
+
+###################################################################################################
+
+#5
+# for i in range(0,9):
+#     print(i, end=" ")
+# print()
+
+# for j in range(5,16):
+#     print(j, end=" ")
+# print()
+ 
+# for k in range(0,21,2):
+#     if (k == 0):
+#         continue
+#     print(k, end=" ")
+# print()
+
+# for p in range(10,0,-1):
+#     print(p, end=" ")
+# print()
