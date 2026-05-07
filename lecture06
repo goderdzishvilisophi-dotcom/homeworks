@@ -1,0 +1,74 @@
+#1
+# sum = 0
+# lst =[]
+
+# for i in range(5):
+#     num = int(input("Enter a number: "))
+#     lst.append(num)
+#     sum += num
+
+# print('Sum = ', sum)
+
+###############################################################################################
+
+#2
+# lst  = []
+
+# for i in range(5):
+#     num = int(input('enter a number: '))
+#     lst.append(num)
+
+# minimal = lst[0]
+# maximal = lst[0]
+
+# for i in range(1, len(lst)):
+#     if lst[i] < minimal:
+#         minimal = lst[i]
+#
+# print('minimal:', minimal)
+
+# for i in range(1, len(lst)):
+#     if lst[i] > maximal:
+#         maximal = lst[i]
+# print('maximal:', maximal)
+
+############################################################################################
+
+#3
+# lst  = []
+# lst_odds = []
+# lst_evens = []
+
+# for i in range(7):
+#     num = int(input('enter a number: '))
+#     lst.append(num)
+#     if i % 2 == 0:
+#         lst_odds.append(num)
+#     else:
+#         lst_evens.append(num)
+
+# print('kenti ricxvebia:', lst_odds)
+# print('luwi ricxvebia:', lst_evens)
+
+#############################################################################################
+
+#4
+# lst  = []
+
+# for i in range(6):
+#     num = int(input('enter a number: '))
+#     lst.append(num)
+#
+# tpl = tuple(lst)
+
+# print("List:", lst)
+# print("Tuple:", tpl)
+
+#############################################################################################
+
+#5
+# lst = [1,2,2,3,3,4,6,6]
+# unique_lst = list(set(lst))
+
+# print('lst = ', lst)
+# print('unique_lst = ', unique_lst)
