@@ -1,0 +1,86 @@
+#1
+# lst = ["apple", "mango", "apple", "pineapple", "banana", "apple", "mango", "banana"]
+# count_words = {}
+#
+# for word in lst:
+#     if word in count_words:
+#         count_words[word] += 1
+#     else:
+#         count_words[word] = 1
+#
+# print(count_words)
+
+##########################################################################################
+
+#2
+# dict1 = {
+#     "name": "Sophi",
+#     "age": 19,
+#     "city": "Tbilisi"
+# }
+# dict2 = {
+#     "name": "Nino",
+#     "age": 20,
+#     "country": "Georgia"
+# }
+# mixed = {}
+# for key in dict1:
+#     if key in dict2:
+#         mixed[key] = [dict1[key], dict2[key]]
+#     else:
+#         mixed[key] = dict1[key]
+# for key in dict2:
+#     if key not in mixed:
+#         mixed[key] = dict2[key]
+#
+# for key, value in mixed.items():
+#     print(key,": ", value)
+
+##############################################################################################
+
+#3
+# original_dict = {
+#     'a': 1,
+#     'b': 2,
+#     'c': 3
+# }
+# reversed_dict = {}
+# for key, value in original_dict.items():
+#     reversed_dict[value] = key
+#
+# for key, value in reversed_dict.items():
+#     print(key, ":", value)
+
+##############################################################################################
+
+#4
+# films1 = {"Inception", "Interstellar", "Joker", "The Matrix", "Dune", "Oppenheimer"}
+# films2 = {"Joker", "The Matrix", "Parasite", "Interstellar", "The Shawshank Redemption", "Dune"}
+#
+# saerto_filmebi = set()
+# only_1 = set()
+# only_2 = set()
+# all_films = set()
+#
+# for film in films1:
+#     for film2 in films2:
+#         if film == film2:
+#             saerto_filmebi.add(film)
+# for film in films1:
+#     for film2 in films2:
+#         if film not in films2:
+#             only_1.add(film)
+# for film in films2:
+#     for film2 in films1:
+#         if film not in films1:
+#             only_2.add(film)
+# for film in films1:
+#     all_films.add(film)
+# for film in films2:
+#     all_films.add(film)
+# print(f'saerto filmebia: , {saerto_filmebi}')
+# print(f'mxolod pirvelis: , {only_1}')
+# print(f'mxolod meoreis: , {only_2}')
+# print(f'kvela filmi: , {all_films}')
+
+###############################################################################################
