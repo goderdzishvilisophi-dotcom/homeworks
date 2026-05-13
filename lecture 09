@@ -1,0 +1,48 @@
+#1
+# def sum_of_digits(n):
+#         if n == 0:
+#             return 0
+#         else:
+#             return (n % 10) + sum_of_digits(n // 10)
+# print(sum_of_digits(12345))
+
+###############################################################################################
+
+#2
+# is_even = lambda x:x % 2 == 0
+# print (is_even(5))
+# print (is_even(6))
+
+###############################################################################################
+
+#3
+# students = [
+#     ("Luka", 15, 85),
+#     ("Ana", 14, 92),
+#     ("Giorgi", 16, 78),
+#     ("Nino", 15, 95)
+# ]
+# print(sorted(students, key = lambda x: (x[1], x[2])))
+
+###############################################################################################
+
+#4
+# words = ["banana", "apple", "kiwi", "watermelon", "cherry"]
+# print(sorted(words, key = lambda x: len(x), reverse = True))
+
+###############################################################################################
+
+#5
+# words = ["banana", "apple", "kiwi", "watermelon", "cherry"]
+# result = list(map(lambda x: x.capitalize(), words))
+
+# print(result)
+
+###############################################################################################
+
+#6
+# numbers = [5, 12, 7, 18, 3, 24, 9]
+# result = filter(lambda x: x > 10 and x % 3 == 0, numbers)
+
+# print(list(result))
+
