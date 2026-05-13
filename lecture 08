@@ -1,0 +1,49 @@
+#1
+# def find_min_max(*args):
+#     print("მინიმალური:", min(args))
+#     print("მაქსიმალური:", max(args))
+#
+# find_min_max(5,8,1,2,9)
+
+#############################################################################################
+
+#2
+# def calculate(*args, operation = "sum"):
+#     if operation == "sum":
+#         print(f'sum = {sum(args)}')
+#     elif operation == "max":
+#         print(f'max = {max(args)}')
+#     elif operation == "min":
+#         print(f'min = {min(args)}')
+#     elif operation == "mult":
+#         result = 1
+#
+#         for num in args:
+#             result *= num
+#         print(f'mult = {result}')
+#
+# calculate(1,2,3,4, operation = "sum")
+# calculate(1,2,3,4, operation = "max")
+# calculate(1,2,3,4, operation = "min")
+# calculate(1,2,3,4, operation = "mult")
+
+##############################################################################################
+
+#3
+# def format_user(first_name, last_name, **kwargs):
+#     print(first_name, last_name, "|", end=" ")
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}", end=", ")
+#
+# format_user("John", "Doe", age=25, job="Developer")
+
+##############################################################################################
+
+#4
+# def safe_divide(a, b):
+#     if b == 0:
+#         print('Cannot divide by zero')
+#     else:
+#         return (a // b, a % b)
+#
+# print(safe_divide(11,2))
