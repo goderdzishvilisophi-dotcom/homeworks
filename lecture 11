@@ -1,0 +1,95 @@
+#1
+
+# def positive (func):
+#     def wrapper(a,b):
+#         if a < 0 or b < 0:
+#             return 'a and b cannot be negative'
+#         return func(a, b)
+#
+#     return wrapper
+# @positive
+# def multiply(a, b):
+#     return a * b
+#
+# print(multiply(5, 3))
+# print(multiply(-6, 4))
+
+################################################################################################
+
+#2
+
+# def formatter(func):
+#
+#     def wrapper(a, b):
+#
+#         result = func(a, b)
+#
+#         return f"called function '{func.__name__}', with attributes {a} and {b}, returned {result}"
+#
+#     return wrapper
+#
+# @formatter
+# def add(a, b):
+#     return a + b
+#
+# @formatter
+# def multiply(a, b):
+#     return a * b
+#
+#
+# print(add(10, 15))
+# print(multiply(10, 15))
+
+################################################################################################
+#3
+
+# import time
+# def repeat(times, delay):
+#     def decorator(func):
+#         def wrapper():
+#             for i in range(times):
+#                 func()
+#                 time.sleep(delay)
+#         return wrapper
+#     return decorator
+#
+# @repeat(times=3, delay = 2)
+# def say_hello():
+#     print('Hello')
+# say_hello()
+
+#################################################################################################
+
+#4
+
+# current_user = {
+#     "username": "Sophi",
+#     "role": "admin"
+# }
+#
+# def role_required(role):
+#     def decorator(func):
+#         def wrapper(*args):
+#             if current_user["role"] != role:
+#                 print("Permission denied!")
+#                 return
+#
+#             return func(*args)
+#         return wrapper
+#     return decorator
+#
+# @role_required("admin")
+# def delete_user(user_id):
+#     print(f"User with id {user_id} has been deleted.")
+#
+# @role_required("editor")
+# def edit_user(user_id):
+#     print(f"User with id {user_id} has been updated.")
+#
+# @role_required("user")
+# def create_user(first_name):
+#     print(f"User {first_name} has been created.")
+#
+# delete_user(5)
+# edit_user(10)
+# create_user("Mariami")
