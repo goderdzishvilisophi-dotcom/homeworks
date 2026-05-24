@@ -1,0 +1,47 @@
+#1
+# def safe_get(lst, index):
+#
+#     try:
+#         return lst[index]
+#     except IndexError:
+#         return ("Error: There is no item with this index")
+#     except TypeError:
+#         return ("Error: Index must be a number")
+#
+# numbers = [10, 20, 30]
+#
+# print(safe_get(numbers, 1))
+# print(safe_get(numbers, 5))
+# print(safe_get(numbers, "sophi"))
+
+#################################################################################################
+
+#2
+
+# def safe_get_value(dictionary, key):
+#     try:
+#         return dictionary[key]
+#     except KeyError:
+#         return (f"Error: Key '{key}' doesn't exist")
+#
+# student = {
+#     "name": "Sophi",
+#     "age": 19
+# }
+# print(safe_get_value(student, "name"))
+# print(safe_get_value(student, "hobby"))
+
+################################################################################################
+
+#3
+
+# def squareofNumber(n):
+#     return n*n
+# try:
+#     n = int(input("Enter a number: "))
+# except ValueError:
+#     print ("Error: It must be an integer")
+# else:
+#     print (squareofNumber(n))
+# finally:
+#     print("Operation is finished")
