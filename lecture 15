@@ -1,0 +1,163 @@
+ #1
+# def count(filename):
+#     try:
+#         file = open(filename, 'r')
+#         data = file.read()
+#
+#         lines = len(data.splitlines())
+#         words = len(data.split())
+#         characters = len(data)
+#
+#         file.close()
+#
+#         print(f'Number of lines: {lines}')
+#         print(f'Number of words: {words}')
+#         print(f'Number of characters: {characters}')
+#
+#     except FileNotFoundError:
+#         print('File not found')
+#
+# count("data.txt")
+
+##############################################################################################
+
+#2
+
+# def write_text():
+#     try:
+#         while True:
+#             text = input("Enter text: ")
+#             if text == "exit":
+#                 print("Program finished")
+#                 break
+#
+#             file = open("data.csv", "a")
+#             file.write(text + "\n")
+#             file.close()
+#     except Exception:
+#         print("Something went wrong")
+# write_text()
+
+#############################################################################################
+
+#3
+
+# import csv
+# def filter_products():
+#     try:
+#         min_price = float(input("Enter minimum price: "))
+#         with open("products.csv", "r") as file:
+#             reader = csv.DictReader(file)
+#
+#             with open("filtered_products.csv", "w", newline="") as filtered_file:
+#                 writer = csv.DictWriter(
+#                     filtered_file,
+#                     fieldnames=["name", "price"]
+#                 )
+#
+#                 writer.writeheader()
+#                 for row in reader:
+#                     price = float(row["price"])
+#                     if price > min_price:
+#                         writer.writerow(row)
+#
+#         print("Filtered products saved successfully")
+#
+#     except FileNotFoundError:
+#         print("File not found")
+#
+#     except ValueError:
+#         print("Please enter a valid number")
+#
+#
+# filter_products()
+
+###############################################################################################
+
+#4
+# import csv
+# def view_contacts():
+#     try:
+#         with open("contacts.csv", "r") as file:
+#             reader = csv.DictReader(file)
+#             for row in reader:
+#                 print(row)
+# 
+#     except FileNotFoundError:
+#         print("File not found")
+# def add_contact():
+#     name = input("Enter name: ")
+#     phone = input("Enter phone: ")
+#     email = input("Enter email: ")
+#     with open("contacts.csv", "a", newline="") as file:
+# 
+#         writer = csv.DictWriter(
+#             file,
+#             fieldnames=["name", "phone", "email"]
+#         )
+#         writer.writerow({
+#             "name": name,
+#             "phone": phone,
+#             "email": email
+#         })
+# 
+#     print("Contact added")
+# def search_contact():
+#     search_name = input("Enter name: ")
+#     found = False
+#     try:
+#         with open("contacts.csv", "r") as file:
+#             reader = csv.DictReader(file)
+#             for row in reader:
+#                 if row["name"] == search_name:
+#                     print(row)
+#                     found = True
+#         if not found:
+#             print("Contact not found")
+# 
+#     except FileNotFoundError:
+#         print("File not found")
+# def delete_contact():
+#     delete_name = input("Enter name to delete: ")
+#     contacts = []
+#     found = False
+#     try:
+#         with open("contacts.csv", "r") as file:
+#             reader = csv.DictReader(file)
+#             for row in reader:
+#                 if row["name"] != delete_name:
+#                     contacts.append(row)
+#                 else:
+#                     found = True
+#         if not found:
+#             print("Contact not found")
+#             return
+#         with open("contacts.csv", "w", newline="") as file:
+# 
+#             writer = csv.DictWriter(
+#                 file,
+#                 fieldnames=["name", "phone", "email"]
+#             )
+#             writer.writeheader()
+#             writer.writerows(contacts)
+#         print("Contact deleted")
+# 
+#     except FileNotFoundError:
+#         print("File not found")
+# 
+# while True:
+#     choice = input("Choose: ")
+# 
+#     if choice == "View contacts":
+#         view_contacts()
+#     elif choice == "Add contact":
+#         add_contact()
+#     elif choice == "Search contact":
+#         search_contact()
+#     elif choice == "Delete contact":
+#         delete_contact()
+#     elif choice == "Finish":
+#         print("Program finished")
+#         break
+#     else:
+#         print("Invalid choice")
