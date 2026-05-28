@@ -1,0 +1,102 @@
+#1
+
+# class Dog:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#     def bark(self):
+#         print(f"{self.name} says: Woof!")
+#     def info(self):
+#         print(f"Name: {self.name}")
+#         print(f"Age: {self.age}")
+# dog1 = Dog("Buddy", 3)
+#
+# dog1.bark()
+# dog1.info()
+
+############################################################################################
+
+#2
+
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     def area(self):
+#         return self.width * self.height
+#     def perimeter(self):
+#         return 2 * (self.width + self.height)
+#     def is_square(self):
+#         return self.width == self.height
+#
+# r = Rectangle(6, 9)
+#
+# print(r.area())
+# print(r.perimeter())
+# print(r.is_square())
+
+############################################################################################
+
+#3
+
+# class BankAccount:
+#     bank_name = "Step Bank"
+#     def __init__(self, owner, balance):
+#         self.owner = owner
+#         self.balance = balance
+#     def deposit(self, amount):
+#         self.balance += amount
+#     def withdraw(self, amount):
+#         if amount > self.balance:
+#             print ("Insufficient funds!")
+#         else:
+#             self.balance -= amount
+#     def show_balance(self):
+#         print(f"Bank: {BankAccount.bank_name}")
+#         print(f"Owner: {self.owner}")
+#         print(f"Balance: {self.balance}")
+#
+# account1 = BankAccount("Sophi", 1000)
+# account1.deposit(500)
+# account1.withdraw(200)
+# account1.show_balance()
+
+
+###########################################################################################
+
+#4
+# class Student:
+#     def __init__(self, name, grade):
+#         self.name = name
+#         self.grade = grade
+# class Classroom:
+#     def __init__(self):
+#         self.students = []
+#     def add_student(self, student):
+#         self.students.append(student)
+# 
+#     def average(self):
+#         total = 0
+#         for student in self.students:
+#             total += student.grade
+# 
+#         avg = total / len(self.students)
+#         return round(avg, 2)
+# 
+#     def top_student(self):
+#         best = max(self.students, key=lambda x: x.grade)
+#         return best.name
+# 
+# s1 = Student("Sophi", 9)
+# s2 = Student("Luka", 6)
+# s3 = Student("Ana", 8)
+# 
+# classroom = Classroom()
+# 
+# classroom.add_student(s1)
+# classroom.add_student(s2)
+# classroom.add_student(s3)
+# 
+# print(classroom.average())
+# print(classroom.top_student())
