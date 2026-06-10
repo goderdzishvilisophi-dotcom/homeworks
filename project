@@ -1,0 +1,141 @@
+import csv
+from datetime import datetime
+
+username = input("Enter your name: ")
+
+def write_log(action):
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("log.txt", "a") as file:
+        file.write(
+            f"[{current_time}] USER={username} | ACTION={action}\n"
+        )
+def show_all_products():
+    try:
+        with open("products.csv", "r") as file:
+            reader = csv.DictReader(file)
+            print("\n--- PRODUCTS ---")
+
+            for row in reader:
+                print(
+                    f"ID: {row['id']}, "
+                    f"Name: {row['name']}, "
+                    f"Price: {row['price']}, "
+                    f"Stock: {row['stock']}"
+                )
+        write_log("VIEW_ALL_PRODUCTS")
+    except FileNotFoundError:
+        print("File not found")
+
+def get_product_by_id():
+    product_id = input("Enter product id: ")
+    found = False
+    try:
+        with open("products.csv", "r") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                if row["id"] == product_id:
+                    print("\nProduct found:")
+                    print(row)
+
+                    found = True
+
+                    write_log(
+                        f"GET_PRODUCT | PRODUCT_ID={product_id}"
+                    )
+                    break
+        if not found:
+            print("Product not found")
+    except FileNotFoundError:
+        print("File not found")
+
+def add_product():
+    try:
+        name = input("Enter product name: ")
+        price = float(input("Enter price: "))
+        stock = int(input("Enter stock: "))
+
+        products = []
+
+        with open("products.csv", "r") as file:
+            reader = csv.DictReader(file)
+
+            for row in reader:
+                products.append(row)
+
+        new_id = str(len(products) + 1)
+
+        with open("products.csv", "a", newline="") as file:
+            writer = csv.DictWriter(
+                file,
+                fieldnames=["id", "name", "price", "stock"]
+            )
+
+            writer.writerow({
+                "id": new_id,
+                "name": name,
+                "price": price,
+                "stock": stock
+            })
+
+        print("Product added successfully")
+        write_log(
+            f"ADD_PRODUCT | NAME={name}"
+        )
+    except ValueError:
+        print("Invalid price or stock")
+    except FileNotFoundError:
+        print("File not found")
+
+def delete_product():
+    product_id = input("Enter product id to delete: ")
+    products = []
+    found = False
+
+    try:
+        with open("products.csv", "r") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                if row["id"] != product_id:
+                    products.append(row)
+                else:
+                    found = True
+        if not found:
+            print("Product not found")
+            return
+
+        with open("products.csv", "w", newline="") as file:
+            writer = csv.DictWriter(
+                file,
+                fieldnames=["id", "name", "price", "stock"]
+            )
+            writer.writeheader()
+            writer.writerows(products)
+        print("Product deleted")
+        write_log(
+            f"DELETE_PRODUCT | PRODUCT_ID={product_id}"
+        )
+    except FileNotFoundError:
+        print("File not found")
+while True:
+
+    print("\n MENU:")
+    print("1. Show all products")
+    print("2. Get product by id")
+    print("3. Add product")
+    print("4. Delete product")
+    print("5. Exit")
+    choice = input("Choose your option: ")
+
+    if choice == "1":
+        show_all_products()
+    elif choice == "2":
+        get_product_by_id()
+    elif choice == "3":
+        add_product()
+    elif choice == "4":
+        delete_product()
+    elif choice == "5":
+        print("Program finished")
+        break
+    else:
+        print("Invalid choice")
