@@ -1,0 +1,109 @@
+import pandas as pd
+from datetime import datetime
+
+username = input("Enter your name: ")
+def write_log(action):
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("log.txt", "a") as file:
+        file.write(
+            f"[{current_time}] USER={username} | ACTION={action}\n"
+        )
+
+def show_all_products():
+    try:
+        df = pd.read_csv("products.csv")
+        print("\n--- PRODUCTS ---")
+        print(df)
+        write_log("VIEW_ALL_PRODUCTS")
+    except FileNotFoundError:
+        print("File not found")
+
+def get_product_by_id():
+    try:
+        product_id = int(input("Enter product id: "))
+        df = pd.read_csv("products.csv")
+        product = df[df["id"] == product_id]
+        if product.empty:
+            print("Product not found")
+        else:
+            print(product)
+            write_log(
+                f"GET_PRODUCT | PRODUCT_ID={product_id}"
+            )
+    except ValueError:
+        print("Please enter a valid id")
+
+    except FileNotFoundError:
+        print("File not found")
+
+def add_product():
+    try:
+        name = input("Enter product name: ")
+        price = float(input("Enter price: "))
+        stock = int(input("Enter stock: "))
+
+        df = pd.read_csv("products.csv")
+        new_id = df["id"].max() + 1
+        new_product = pd.DataFrame(
+            [{
+                "id": new_id,
+                "name": name,
+                "price": price,
+                "stock": stock
+            }]
+        )
+        df = pd.concat(
+            [df, new_product],
+            ignore_index=True
+        )
+        df.to_csv("products.csv", index=False)
+        print("Product added successfully")
+        write_log(
+            f"ADD_PRODUCT | NAME={name}"
+        )
+    except ValueError:
+        print("Invalid input")
+    except FileNotFoundError:
+        print("File not found")
+
+def delete_product():
+    try:
+        product_id = int(
+            input("Enter product id to delete: ")
+        )
+        df = pd.read_csv("products.csv")
+        if product_id not in df["id"].values:
+            print("Product not found")
+            return
+        df = df[df["id"] != product_id]
+
+        df.to_csv("products.csv", index=False)
+        print("Product deleted")
+        write_log(
+            f"DELETE_PRODUCT | PRODUCT_ID={product_id}"
+        )
+    except ValueError:
+        print("Please enter a valid id")
+    except FileNotFoundError:
+        print("File not found")
+while True:
+    print("\nMENU:")
+    print("1. Show all products")
+    print("2. Get product by id")
+    print("3. Add product")
+    print("4. Delete product")
+    print("5. Exit")
+    choice = input("Choose option: ")
+    if choice == "1":
+        show_all_products()
+    elif choice == "2":
+        get_product_by_id()
+    elif choice == "3":
+        add_product()
+    elif choice == "4":
+        delete_product()
+    elif choice == "5":
+        print("Program finished")
+        break
+    else:
+        print("Invalid choice")
